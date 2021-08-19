@@ -1,0 +1,19 @@
+
+
+<div class="p-5 mb-4 bg-light rounded-3">
+  <h1 class="display-4"> <%= @myapp.first_name %>
+    <%= @myapp.last_name %>
+  </h1>
+  <p class="lead"><%= @myapp.email %>|
+                  <%= @myapp.phone %>|
+                  <%= @myapp.twitter %>
+  </p>
+  
+  <%= link_to 'Edit', edit_myapp_path(@myapp), class:"btn btn-secondary" %> 
+<%= link_to 'Back', myapps_path, class:"btn btn-dark"%>
+<td><%= link_to 'Delete', @myapp, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-danger"%></td>
+
+</div>
+
+
+

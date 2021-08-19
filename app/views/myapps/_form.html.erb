@@ -1,0 +1,45 @@
+<%= form_with(model: myapp) do |form| %>
+  <% if myapp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(myapp.errors.count, "error") %> prohibited this myapp from being saved:</h2>
+
+      <ul>
+        <% myapp.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+   
+    <%= form.text_field :first_name, class:"form-control", placeholder:"First Name" %>
+  </div>
+
+  <div class="field form-group">
+   
+    <%= form.text_field :last_name, class:"form-control", placeholder:"Last Name" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :email, class:"form-control", placeholder:"Email"%>
+  </div>
+
+  <div class="field form-group">
+    
+    <%= form.text_field :phone, class:"form-control", placeholder:"Phone" %>
+  </div>
+
+  <div class="field form-group">
+  
+    <%= form.text_field :twitter, class:"form-control", placeholder:"Twitter" %>
+  </div>
+  <div class="field form-group">
+  
+    <%= form.number_field :user_id,id: :myapp_user_id, class:"form-control", value: current_user.id, type: :hidden  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:'btn btn-primary'%>
+  </div>
+<% end %>
